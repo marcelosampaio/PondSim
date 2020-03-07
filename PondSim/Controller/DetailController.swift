@@ -8,10 +8,19 @@
 
 import UIKit
 
+// MARK: - Prototols
+protocol DetailDelegate: class {
+    func didChangeDataEntry(item: Item)
+}
+
 class DetailController: UITableViewController {
     
     // MARK: - Properties
     public var item = Item()
+    
+    // delegate
+    // delegate
+    weak var delegate: DetailDelegate?
     
     // MARK: - Outlets
     @IBOutlet weak var pesoTextField: UITextField!
@@ -38,6 +47,11 @@ class DetailController: UITableViewController {
         if !isValidDataEntry() {
             print("🚣‍♂️ invalid data entry!!!")
         }
+        // pass data back to the caller
+        delegate?.didChangeDataEntry(item: item)
+        // return to the caller
+        self.dismiss(animated: true, completion: nil)
+        
     }
     
     @IBAction func deleteItem(_ sender: Any) {

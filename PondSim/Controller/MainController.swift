@@ -8,7 +8,9 @@
 
 import UIKit
 
-class MainController: UIViewController,UITableViewDataSource, UITableViewDelegate {
+class MainController: UIViewController,UITableViewDataSource, UITableViewDelegate, DetailDelegate {
+
+    
 
     // MARK: - Properties
     private var items = [Item]()
@@ -68,12 +70,16 @@ class MainController: UIViewController,UITableViewDataSource, UITableViewDelegat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             let controller = segue.destination as! DetailController
+            controller.delegate = self
             controller.item = selectedItem
             
         }
     }
     
-    
+    // MARK: - Detail Delegate
+    func didChangeDataEntry(item: Item) {
+        print("detail delegate. item: \(item)")
+    }
     
     
 }
