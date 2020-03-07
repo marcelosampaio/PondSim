@@ -11,6 +11,7 @@ import UIKit
 // MARK: - Prototols
 protocol DetailDelegate: class {
     func didAddItem(item: Item)
+    func didEditItem(item: Item)
     func didDeleteItem(item: Item)
 }
 
@@ -41,7 +42,12 @@ class DetailController: UITableViewController {
         }else{
             deleteButton.isHidden = false
         }
-        print("🍑 isEdit: \(isEdit)")
+        
+        if isEdit {
+            pesoTextField.text = String(item.peso)
+            notaTextField.text = String(item.nota).replacingOccurrences(of: ".", with: ",")
+        }
+        
     }
 
     // MARK: - UI Actions
@@ -52,13 +58,25 @@ class DetailController: UITableViewController {
             return
         }
     
-        item = Item()
-        item.prova = "Vn"
-        item.peso = Int(pesoTextField.text!)!
-        item.nota = Double(notaTextField.text!.replacingOccurrences(of: ",", with: "."))!
+        if !isEdit {
+            item = Item()
+            item.prova = "Vn"
+            item.peso = Int(pesoTextField.text!)!
+            item.nota = Double(notaTextField.text!.replacingOccurrences(of: ",", with: "."))!
+            
+            // pass data back to the caller
+            delegate?.didAddItem(item: item)
+            
+        }else{
+            item.peso = Int(pesoTextField.text!)!
+            item.nota = Double(notaTextField.text!.replacingOccurrences(of: ",", with: "."))!
+            
+            // pass data back to the caller
+            delegate?.didEditItem(item: item)
+            
+        }
         
-        // pass data back to the caller
-        delegate?.didAddItem(item: item)
+        
         
         // return to the caller
         self.dismiss(animated: true, completion: nil)

@@ -9,7 +9,7 @@
 import UIKit
 
 class MainController: UIViewController,UITableViewDataSource, UITableViewDelegate, DetailDelegate {
-    
+
 
     // MARK: - Properties
     private var items = [Item]()
@@ -93,13 +93,14 @@ class MainController: UIViewController,UITableViewDataSource, UITableViewDelegat
     // MARK: - UI Actions
     @IBAction func addItem(_ sender: Any) {
         selectedItem = Item()
+        isEdit = false
         performSegue(withIdentifier: "showDetail", sender: self)
     }
     
-    @IBAction func deleteAllItems(_ sender: Any) {
-        items = [Item]()
-        loadData()
-    }
+//    @IBAction func deleteAllItems(_ sender: Any) {
+//        items = [Item]()
+//        loadData()
+//    }
     
     
     // MARK: - Navigation
@@ -122,6 +123,11 @@ class MainController: UIViewController,UITableViewDataSource, UITableViewDelegat
         
         loadData()
         
+    }
+    func didEditItem(item: Item) {
+        print("didEditItem: \(item) isEdit: \(isEdit) selected indexPath.row: \(selectedIndexPath.row)")
+        items[selectedIndexPath.row] = item
+        loadData()
     }
     
     func didDeleteItem(item: Item) {
