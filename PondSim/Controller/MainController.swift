@@ -9,12 +9,13 @@
 import UIKit
 
 class MainController: UIViewController,UITableViewDataSource, UITableViewDelegate, DetailDelegate {
-
     
 
     // MARK: - Properties
     private var items = [Item]()
     private var selectedItem = Item()
+    
+    private var seq = 0
     
     // MARK: - Outlets
     @IBOutlet var headerView: UIView!
@@ -79,8 +80,17 @@ class MainController: UIViewController,UITableViewDataSource, UITableViewDelegat
     // MARK: - Detail Delegate
     func didChangeDataEntry(item: Item) {
         print("detail delegate. item: \(item)")
+        seq = items.count + 1
+        item.prova = "V\(seq)"
+        items.append(item)
+        
+        loadData()
+        
     }
     
+    func didDeleteItem(item: Item) {
+        print("delete item delegate. item: \(item)")
+    }
     
 }
 

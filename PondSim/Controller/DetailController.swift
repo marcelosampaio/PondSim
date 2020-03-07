@@ -11,6 +11,7 @@ import UIKit
 // MARK: - Prototols
 protocol DetailDelegate: class {
     func didChangeDataEntry(item: Item)
+    func didDeleteItem(item: Item)
 }
 
 class DetailController: UITableViewController {
@@ -43,19 +44,32 @@ class DetailController: UITableViewController {
 
     // MARK: - UI Actions
     @IBAction func saveItem(_ sender: Any) {
-        print("🥁 save item")
+
         if !isValidDataEntry() {
-            print("🚣‍♂️ invalid data entry!!!")
+            view.alert(msg: "Você deve informar peso e nota!", sender: self)
+            return
         }
+    
+        item = Item()
+        item.prova = "Vn"
+        item.peso = Int(pesoTextField.text!)!
+        item.nota = Double(notaTextField.text!)!
+        
         // pass data back to the caller
         delegate?.didChangeDataEntry(item: item)
+        
         // return to the caller
         self.dismiss(animated: true, completion: nil)
         
     }
     
     @IBAction func deleteItem(_ sender: Any) {
-        print("🥁 delete item")
+
+        // pass data back to the caller
+        delegate?.didDeleteItem(item: item)
+        
+        // return to the caller
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Data Entry Helper
@@ -68,7 +82,6 @@ class DetailController: UITableViewController {
         }
         return true
     }
-    
-    
+
     
 }

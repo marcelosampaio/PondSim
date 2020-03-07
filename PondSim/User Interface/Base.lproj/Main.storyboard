@@ -156,7 +156,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="319" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toque em &quot;+&quot; para adicionar notas" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePc-v7-ZeL">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toque em &quot;+&quot; para adicionar pesos e notas" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePc-v7-ZeL">
                             <rect key="frame" x="98" y="20" width="122" height="88"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="122" id="hkq-V6-KBh"/>
