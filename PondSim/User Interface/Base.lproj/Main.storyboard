@@ -153,7 +153,7 @@
                         <outlet property="headerLabel" destination="ePc-v7-ZeL" id="muL-3g-PzL"/>
                         <outlet property="headerView" destination="uqL-Ff-34V" id="TT5-cF-KOp"/>
                         <outlet property="tableView" destination="p4E-0C-avs" id="cpC-2e-w1Y"/>
-                        <segue destination="3Qf-eI-Z0U" kind="presentation" identifier="showDetail" id="zXl-Be-T8H"/>
+                        <segue destination="3Qf-eI-Z0U" kind="show" identifier="showDetail" id="zXl-Be-T8H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -189,7 +189,7 @@
             <objects>
                 <tableViewController id="3Qf-eI-Z0U" customClass="DetailController" customModule="PondSim" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GAD-LB-axc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <sections>
@@ -319,6 +319,7 @@
                             <outlet property="delegate" destination="3Qf-eI-Z0U" id="6Us-kf-rGG"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="cyh-JM-ttc"/>
                     <connections>
                         <outlet property="deleteButton" destination="kgD-sw-jgh" id="PAo-U7-7EK"/>
                         <outlet property="notaTextField" destination="rrz-Zp-U5n" id="HCM-VI-r4F"/>

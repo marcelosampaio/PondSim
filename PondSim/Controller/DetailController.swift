@@ -79,7 +79,8 @@ class DetailController: UITableViewController {
         
         
         // return to the caller
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
         
     }
     
@@ -89,7 +90,8 @@ class DetailController: UITableViewController {
         delegate?.didDeleteItem(item: item)
         
         // return to the caller
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Data Entry Helper
