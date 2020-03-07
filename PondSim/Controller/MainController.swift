@@ -97,10 +97,10 @@ class MainController: UIViewController,UITableViewDataSource, UITableViewDelegat
         performSegue(withIdentifier: "showDetail", sender: self)
     }
     
-//    @IBAction func deleteAllItems(_ sender: Any) {
-//        items = [Item]()
-//        loadData()
-//    }
+    @IBAction func deleteAllItems(_ sender: Any) {
+        items = [Item]()
+        loadData()
+    }
     
     
     // MARK: - Navigation

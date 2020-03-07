@@ -40,7 +40,7 @@ class DetailController: UITableViewController {
         if item.prova.isEmpty {
             deleteButton.isHidden = true
         }else{
-            deleteButton.isHidden = false
+            deleteButton.isHidden = true
         }
         
         if isEdit {
