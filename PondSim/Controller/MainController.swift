@@ -102,8 +102,8 @@ class MainController: UIViewController,UITableViewDataSource, UITableViewDelegat
     }
     
     // MARK: - Detail Delegate
-    func didChangeDataEntry(item: Item) {
-        print("detail delegate. item: \(item)")
+    func didAddItem(item: Item) {
+        print("didAddItem: \(item)")
         seq = items.count + 1
         item.prova = "V\(seq)"
         items.append(item)
@@ -113,7 +113,7 @@ class MainController: UIViewController,UITableViewDataSource, UITableViewDelegat
     }
     
     func didDeleteItem(item: Item) {
-        print("delete item delegate. item: \(item)")
+        print("didDeleteItem: \(item)")
     }
     
     // MARK: - Calculation Engine

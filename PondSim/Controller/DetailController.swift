@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - Prototols
 protocol DetailDelegate: class {
-    func didChangeDataEntry(item: Item)
+    func didAddItem(item: Item)
     func didDeleteItem(item: Item)
 }
 
@@ -56,7 +56,7 @@ class DetailController: UITableViewController {
         item.nota = Double(notaTextField.text!.replacingOccurrences(of: ",", with: "."))!
         
         // pass data back to the caller
-        delegate?.didChangeDataEntry(item: item)
+        delegate?.didAddItem(item: item)
         
         // return to the caller
         self.dismiss(animated: true, completion: nil)
