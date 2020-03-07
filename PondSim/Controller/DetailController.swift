@@ -53,7 +53,7 @@ class DetailController: UITableViewController {
         item = Item()
         item.prova = "Vn"
         item.peso = Int(pesoTextField.text!)!
-        item.nota = Double(notaTextField.text!)!
+        item.nota = Double(notaTextField.text!.replacingOccurrences(of: ",", with: "."))!
         
         // pass data back to the caller
         delegate?.didChangeDataEntry(item: item)

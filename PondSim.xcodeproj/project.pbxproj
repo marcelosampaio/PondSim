@@ -17,6 +17,7 @@
 		7FED29B62413FC7700724BB8 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FED29B52413FC7700724BB8 /* ItemCell.swift */; };
 		7FF88CBD241401A50053DA20 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF88CBC241401A50053DA20 /* Item.swift */; };
 		7FF88CC0241413780053DA20 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF88CBF241413780053DA20 /* UIView+Utils.swift */; };
+		7FF88CC224141DED0053DA20 /* Double+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF88CC124141DED0053DA20 /* Double+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		7FED29B52413FC7700724BB8 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		7FF88CBC241401A50053DA20 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		7FF88CBF241413780053DA20 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
+		7FF88CC124141DED0053DA20 /* Double+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				7FF88CBF241413780053DA20 /* UIView+Utils.swift */,
+				7FF88CC124141DED0053DA20 /* Double+Utils.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				7FED29A02413F1ED00724BB8 /* MainController.swift in Sources */,
 				7FF88CC0241413780053DA20 /* UIView+Utils.swift in Sources */,
 				7FED299C2413F1ED00724BB8 /* AppDelegate.swift in Sources */,
+				7FF88CC224141DED0053DA20 /* Double+Utils.swift in Sources */,
 				7FED299E2413F1ED00724BB8 /* SceneDelegate.swift in Sources */,
 				7FF88CBD241401A50053DA20 /* Item.swift in Sources */,
 				7FED29B62413FC7700724BB8 /* ItemCell.swift in Sources */,

@@ -43,6 +43,16 @@ class MainController: UIViewController,UITableViewDataSource, UITableViewDelegat
             footerView.isHidden = false
         }
         tableView.reloadData()
+        
+        // calculation
+        footerLabel.text = "Média apurada: \(calculation(items).currencyFormat())"
+        if calculation(items) < 6 {
+            footerView.backgroundColor = UIColor.red
+        }else{
+            footerView.backgroundColor = UIColor(red: 0/255, green: 143/255, blue: 0/255, alpha: 1)
+        }
+        
+        
     }
     
     
@@ -52,7 +62,21 @@ class MainController: UIViewController,UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = items[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell") as! ItemCell
+        cell.prova.text = item.prova
+        cell.peso.text = String(item.peso)
+        cell.nota.text = String(item.nota)
+        
+        if item.nota < 6 {
+            cell.prova.textColor = UIColor.red
+            cell.nota.textColor = UIColor.red
+        }else{
+            cell.prova.textColor = UIColor.black
+            cell.nota.textColor = UIColor.black
+        }
+        
+        
         return cell
     }
     
@@ -92,5 +116,20 @@ class MainController: UIViewController,UITableViewDataSource, UITableViewDelegat
         print("delete item delegate. item: \(item)")
     }
     
+    // MARK: - Calculation Engine
+    private func calculation(_ items: [Item]) -> Double {
+        var average : Double = 0.0
+        var notaSum : Double = 0.0
+        var pesoSum : Int = 0
+        
+        for item in items {
+            pesoSum = pesoSum + item.peso
+            notaSum = notaSum + (item.nota * Double(item.peso))
+        }
+        
+        average = notaSum / Double(pesoSum)
+    
+        return average
+    }
 }
 
