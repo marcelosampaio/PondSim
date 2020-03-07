@@ -18,8 +18,9 @@ class DetailController: UITableViewController {
     
     // MARK: - Properties
     public var item = Item()
+    public var isEdit = false
+
     
-    // delegate
     // delegate
     weak var delegate: DetailDelegate?
     
@@ -40,6 +41,7 @@ class DetailController: UITableViewController {
         }else{
             deleteButton.isHidden = false
         }
+        print("🍑 isEdit: \(isEdit)")
     }
 
     // MARK: - UI Actions

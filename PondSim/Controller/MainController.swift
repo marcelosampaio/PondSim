@@ -14,6 +14,8 @@ class MainController: UIViewController,UITableViewDataSource, UITableViewDelegat
     // MARK: - Properties
     private var items = [Item]()
     private var selectedItem = Item()
+    private var selectedIndexPath = IndexPath()
+    private var isEdit = false
     
     private var seq = 0
     
@@ -82,6 +84,9 @@ class MainController: UIViewController,UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedItem = items[indexPath.row]
+        selectedIndexPath = indexPath
+        isEdit = true
+        tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "showDetail", sender: self)
     }
 
@@ -91,12 +96,19 @@ class MainController: UIViewController,UITableViewDataSource, UITableViewDelegat
         performSegue(withIdentifier: "showDetail", sender: self)
     }
     
+    @IBAction func deleteAllItems(_ sender: Any) {
+        items = [Item]()
+        loadData()
+    }
+    
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             let controller = segue.destination as! DetailController
             controller.delegate = self
             controller.item = selectedItem
+            controller.isEdit = isEdit
             
         }
     }
