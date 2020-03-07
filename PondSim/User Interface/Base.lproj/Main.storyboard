@@ -315,8 +315,10 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="deleteButton" destination="kgD-sw-jgh" id="PAo-U7-7EK"/>
                         <outlet property="notaTextField" destination="rrz-Zp-U5n" id="HCM-VI-r4F"/>
                         <outlet property="pesoTextField" destination="EDA-ue-LRK" id="0Fq-SD-GyU"/>
+                        <outlet property="saveButton" destination="Y60-b8-zw4" id="9Pj-LB-ctQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jsi-Zq-qwL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
