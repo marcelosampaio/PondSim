@@ -145,11 +145,37 @@
                     <connections>
                         <outlet property="footerLabel" destination="3JA-I2-6tq" id="MFs-XR-yYa"/>
                         <outlet property="footerView" destination="Wlp-PG-2Bg" id="d9O-ms-bks"/>
+                        <outlet property="headerLabel" destination="ePc-v7-ZeL" id="muL-3g-PzL"/>
+                        <outlet property="headerView" destination="uqL-Ff-34V" id="TT5-cF-KOp"/>
                         <outlet property="tableView" destination="p4E-0C-avs" id="cpC-2e-w1Y"/>
                         <segue destination="3Qf-eI-Z0U" kind="presentation" identifier="showDetail" id="zXl-Be-T8H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="uqL-Ff-34V">
+                    <rect key="frame" x="0.0" y="0.0" width="319" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toque em &quot;+&quot; para adicionar notas" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePc-v7-ZeL">
+                            <rect key="frame" x="98" y="20" width="122" height="88"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="122" id="hkq-V6-KBh"/>
+                                <constraint firstAttribute="height" constant="88" id="v4b-J4-q1o"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="dhn-T8-Bu4" firstAttribute="bottom" secondItem="ePc-v7-ZeL" secondAttribute="bottom" constant="20" id="3Ce-H7-Ett"/>
+                        <constraint firstItem="ePc-v7-ZeL" firstAttribute="leading" secondItem="dhn-T8-Bu4" secondAttribute="leading" constant="98" id="evG-h8-Tdr"/>
+                        <constraint firstItem="dhn-T8-Bu4" firstAttribute="trailing" secondItem="ePc-v7-ZeL" secondAttribute="trailing" constant="99" id="fnM-9m-FZK"/>
+                        <constraint firstItem="ePc-v7-ZeL" firstAttribute="top" secondItem="dhn-T8-Bu4" secondAttribute="top" constant="20" id="tx4-HG-FiY"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="dhn-T8-Bu4"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="1044.9275362318842" y="121.46739130434784"/>
         </scene>
@@ -157,7 +183,7 @@
         <scene sceneID="a6g-Gz-fwc">
             <objects>
                 <tableViewController id="3Qf-eI-Z0U" customClass="DetailController" customModule="PondSim" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GAD-LB-axc">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GAD-LB-axc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -178,14 +204,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EDA-ue-LRK">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EDA-ue-LRK">
                                                     <rect key="frame" x="297" y="11" width="97" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="D7h-L7-WUO"/>
                                                         <constraint firstAttribute="width" constant="97" id="zdK-mp-fKh"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -209,14 +235,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rrz-Zp-U5n">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rrz-Zp-U5n">
                                                     <rect key="frame" x="297" y="11" width="97" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="C2G-AV-Ycc"/>
                                                         <constraint firstAttribute="width" constant="97" id="XWT-uH-IUZ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>

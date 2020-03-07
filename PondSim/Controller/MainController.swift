@@ -15,6 +15,10 @@ class MainController: UIViewController,UITableViewDataSource, UITableViewDelegat
     private var selectedItem = Item()
     
     // MARK: - Outlets
+    @IBOutlet var headerView: UIView!
+    @IBOutlet weak var headerLabel: UILabel!
+    
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var footerView: UIView!
     @IBOutlet weak var footerLabel: UILabel!
@@ -23,9 +27,21 @@ class MainController: UIViewController,UITableViewDataSource, UITableViewDelegat
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadData()
     }
 
+    // MARK: - App Data Source
+    private func loadData() {
+        if items.count == 0 {
+            tableView.tableHeaderView = headerView
+            footerView.isHidden = true
+        }else{
+            tableView.tableHeaderView = nil
+            footerView.isHidden = false
+        }
+        tableView.reloadData()
+    }
+    
     
     // MARK: - TableView DataSource and Delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
